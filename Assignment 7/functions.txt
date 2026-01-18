@@ -1,0 +1,115 @@
+THEORY QUESTIONS (With examples)
+
+1️⃣ Difference between Function and Method
+
+➡️ Function: Defined using def, can be used independently.
+
+    Method: A function associated with an object (called using object.method()).
+
+    Example:
+        def greet():       # Function
+    print("Hello!")
+
+    message = "hello"
+    print(message.upper())  # .upper() is a method
+
+2️⃣ Function Arguments and Parameters
+
+➡️ Parameter: Variable listed inside function definition.
+
+    Argument: Value passed when calling the function.
+
+    Example:
+        def add(a, b):  # a and b are parameters
+        return a + b
+
+        print(add(3, 5))  # 3 and 5 are arguments
+
+3️⃣ Ways to Define and Call Functions
+
+➡️ Defining: Using def or lambda
+
+    Calling: Directly by name with parentheses.
+
+    Example:
+        def greet(name):
+        return f"Hello {name}"
+
+        print(greet("Amandeep"))
+
+        # Lambda example
+        square = lambda x: x*x
+        print(square(5))
+
+
+4️⃣ Purpose of return Statement
+
+➡️  It sends a value back to the caller and exits the function.
+
+    Example:
+        def multiply(x, y):
+        return x * y
+
+5️⃣ Iterators vs Iterables
+
+➡️ Iterable: Objects you can loop over (like lists, tuples).
+
+    Iterator: Object returned by iter(), gives items one at a time using next().
+
+    Example:
+        my_list = [1, 2, 3]
+        it = iter(my_list)
+        print(next(it))  # 1
+
+6️⃣ Generators
+
+➡️ Functions that yield values using yield instead of return.
+
+    Example:
+        def countdown(n):
+        while n > 0:
+        yield n
+        n -= 1
+
+7️⃣ Advantages of Generators
+
+➡️ 1. Saves memory (doesn’t store all values).
+
+    2. Easy to implement iterators.
+
+    Example: Reading large files line by line using a generator instead of 
+    loading all lines into memory.
+
+8️⃣ Lambda Function
+
+➡️ Anonymous one-line function using lambda.
+
+    Example:
+        add = lambda x, y: x + y
+        print(add(2, 3))
+
+9️⃣ Purpose of map()
+
+➡️ Applies a function to every element of an iterable.
+
+    Example:
+        nums = [1, 2, 3, 4]
+        squares = map(lambda x: x**2, nums)
+        print(list(squares))  # [1, 4, 9, 16]
+
+🔟 Difference between map(), reduce(), filter()
+
+➡️ | Function   | Purpose                             | Example                               |
+    | ---------- | ----------------------------------- | ------------------------------------- |
+    | `map()`    | Applies a function to all elements  | `map(lambda x: x*2, [1,2,3])`         |
+    | `filter()` | Filters elements based on condition | `filter(lambda x: x%2==0, [1,2,3,4])` |
+    | `reduce()` | Reduces elements to a single value  | `reduce(lambda x,y: x+y, [1,2,3,4])`  |
+
+11️⃣Internal Mechanism of Reduce
+
+➡️ List: [47, 11, 42, 13]
+
+    Step-by-step:
+    reduce(sum, [47,11,42,13])
+    = ((47+11)+42)+13
+    = 113
